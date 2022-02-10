@@ -18,11 +18,11 @@
     <fieldset>
       <legend>Employee Information</legend>
       <label for="fname">First name:</label>
-      <input type="text" id="fname" name="fname" />
+      <input type="text" id="firstName" name="fname" />
       <br />
       <br />
       <label for="lname">Last name:</label>
-      <input type="text" id="lname" name="lname" />
+      <input type="text" id="lastName" name="lname" />
       <br />
       <br />
       <label for="email">Email:</label>
@@ -146,18 +146,18 @@
       };
 
       const addData = () => {
-        const firstName = document.getElementById("fname").value;
-        const lastName = document.getElementById("lname").value;
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
         const email = document.getElementById("email").value;
         const age = document.getElementById("age").value;
         const occupation = document.getElementById("occupation").value;
       };
 
       const newEmployee = new Employee(
-        firstName + lastName,
+        `${firstName} ${lastName}`,
         email,
-        age,
-        occupation
+        occupation,
+        age
       );
     </script>
   </body>
