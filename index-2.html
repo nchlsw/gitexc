@@ -124,13 +124,20 @@
 
     <script>
       class Employee {
-        constructor(fullName, email, age, occupation) {
+        constructor(fullName, occupation, age, email) {
           this.fullName = fullName;
           this.email = email;
           this.age = age;
           this.occupation = occupation;
         }
       }
+
+      let data = [
+        new Employee("Mark", "Software Developer", 29, "mark@mail.com"),
+        new Employee("Steve", "CEO", 29, "steve@mail.com"),
+        new Employee("Bill", "UI/UX", 29, "bill@mail.com"),
+        new Employee("Seto", "Digital Marketing", 29, "seto@mail.com"),
+      ];
       //committed feat: added employee class
     </script>
   </body>
