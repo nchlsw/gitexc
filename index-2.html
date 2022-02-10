@@ -64,11 +64,11 @@
 
       <tbody id="employeeDatabase">
         <tr>
-          <td>1</td>
-          <td>John Doe</td>
-          <td>John@mail.com</td>
-          <td>29</td>
-          <td>Software Developer</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td><button onclick="renderData()">Edit</button></td>
           <td><button onclick="deleteData()">Delete</button></td>
         </tr>
@@ -86,7 +86,7 @@
       <br />
       <label for="searchOccupation">Occupation</label>
       <select id="occupationInput">
-        <option>All Occupations</option>
+        <option value="">All Occupations</option>
         <option>Software Developer</option>
         <option>UI/UX</option>
         <option>Digital Marketer</option>
@@ -113,11 +113,11 @@
 
       <tbody id="searchResult">
         <tr>
-          <td>1</td>
-          <td>John Doe</td>
-          <td>John@mail.com</td>
-          <td>29</td>
-          <td>Software Developer</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
@@ -143,7 +143,18 @@
 
       const renderData = () => {
         let htmlResult = "";
+        htmlResult += `
+          <tr>
+            <td>${idx + 1}</td>
+            <td>${fullName}</td>
+            <td>${email}</td>
+            <td>${age}</td>
+            <td>${occupation}</td>
+            <td><button onclick ="renderData(${idx})">Edit</button></td>
+            <td><button onclick ="deleteData(${idx})`;
+        document.getElementById("employeeDatabase").innerHTML = htmlResult;
       };
+      renderData();
 
       const addData = () => {
         const firstName = document.getElementById("firstName").value;
@@ -159,6 +170,37 @@
         occupation,
         age
       );
+      data.push(newEmployee);
+      renderData();
+
+      const searchEmployees = () => {
+        const searchEmployeeNameValue =
+          document.getElementById("searchName").value;
+        const searchEmployeeOccupationValue =
+          document.getElementById("searchOccupation").value;
+
+        let htmlResult = "";
+        data.forEach = (val, idx) => {
+          if (
+            val.fullName
+              .toLowerCase()
+              .includes(searchEmployeeNameValue.toLowerCase()) &&
+            val.occupation
+              .toLowerCase()
+              .includes(searchEmployeeOccupationValue.toLowerCase())
+          ) {
+            htmlResult += `
+          <tr>
+            <td>${idx + 1}</td>
+            <td>${val.fullName}</td>
+            <td>${val.email}</td>
+            <td>${val.age}</td>
+            <td>${val.occupation}</td>
+          </tr>`;
+          }
+        };
+        document.getElementById("searchResult").innerHTML = htmlResult;
+      };
     </script>
   </body>
 </html>
