@@ -56,13 +56,13 @@
           <th>No</th>
           <th>Name</th>
           <th>Email</th>
-          <th>Age</th>
           <th>Occupation</th>
+          <th>Age</th>
           <th colspan="2">Action</th>
         </tr>
       </thead>
 
-      <tbody id="tableData">
+      <tbody id="employeeDatabase">
         <tr>
           <td>1</td>
           <td>John Doe</td>
@@ -80,11 +80,11 @@
 
     <fieldset>
       <legend>Search Employee</legend>
-      <label for="fname">Employee Name:</label>
-      <input type="text" id="fname" name="fname" />
+      <label for="searchName">Employee Name:</label>
+      <input type="text" id="searchName" name="fname" />
       <br />
       <br />
-      <label for="occupation">Occupation</label>
+      <label for="searchOccupation">Occupation</label>
       <select id="occupationInput">
         <option>All Occupations</option>
         <option>Software Developer</option>
@@ -131,6 +131,7 @@
           this.occupation = occupation;
         }
       }
+      //committed feat: added employee class
 
       let data = [
         new Employee("Mark", "Software Developer", 29, "mark@mail.com"),
@@ -138,7 +139,26 @@
         new Employee("Bill", "UI/UX", 29, "bill@mail.com"),
         new Employee("Seto", "Digital Marketing", 29, "seto@mail.com"),
       ];
-      //committed feat: added employee class
+      //committed added data
+
+      const renderData = () => {
+        let htmlResult = "";
+      };
+
+      const addData = () => {
+        const firstName = document.getElementById("fname").value;
+        const lastName = document.getElementById("lname").value;
+        const email = document.getElementById("email").value;
+        const age = document.getElementById("age").value;
+        const occupation = document.getElementById("occupation").value;
+      };
+
+      const newEmployee = new Employee(
+        firstName + lastName,
+        email,
+        age,
+        occupation
+      );
     </script>
   </body>
 </html>
@@ -148,6 +168,6 @@ fix : used when bugfix
 i : used when there's a ui change
 cs : used when there's change on documentation
 chose : used when cleaning up codes without changing function
-ref : used when optimization
+ref : used when optimization 
 
 -->
