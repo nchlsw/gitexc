@@ -28,14 +28,40 @@
 // example : [1, 2, 3, 4, 5]
 // output : [1, 4, 9, 16, 25]
 
-const numbers = [1, 2, 3, 4, 5];
-let result = 0;
-const squareNumbers = (numbers = []) => {
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    result = newNumbers.push(Math.pow(numbers[i], 2));
-  }
-  return newNumbers;
-};
+// const numbers = [1, 2, 3, 4, 5];
+// let result = 0;
+// const squareNumbers = (numbers = []) => {
+//   const newNumbers = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     result = newNumbers.push(Math.pow(numbers[i], 2));
+//   }
+//   return newNumbers;
+// };
 
-console.log(squareNumbers(numbers));
+// console.log(squareNumbers(numbers));
+
+// 3. plus minus
+// input : [1, 2, 3, 4, 5, 9]
+// output : 8
+
+const numbers = [1, 2, 3, 4, 5, 9];
+
+const plusMinus = (numbers = []) => {
+  let result = 0;
+  let operator = "plus";
+  for (let i = 0; i < numbers.length; i++) {
+    if (operator == "plus") {
+      result += numbers[i];
+      operator = "minus";
+    } else if (operator == "minus") {
+      result -= numbers[i];
+      operator = "plus";
+    }
+  }
+  return result;
+};
+console.log(plusMinus(numbers));
+
+//4. remove vowels
+// input : "hello"
+// output : remove vowels
