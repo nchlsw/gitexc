@@ -67,23 +67,54 @@
 // output : remove vowels
 //use method split
 
-const vowels = "hello world";
-const removeVowels = (val) => {
-  result = vowels.split("");
+// const vowels = "hello world";
+// const removeVowels = (val) => {
+//   result = vowels.split("");
 
-  for (let i = 0; i < result.length; i++) {
-    if (
-      result[i] == "a" ||
-      result[i] == "i" ||
-      result[i] == "u" ||
-      result[i] == "e" ||
-      result[i] == "o"
-    ) {
-      result[i] = "";
-      result.push(result[i]);
-    }
+//   for (let i = 0; i < result.length; i++) {
+//     if (
+//       result[i] == "a" ||
+//       result[i] == "i" ||
+//       result[i] == "u" ||
+//       result[i] == "e" ||
+//       result[i] == "o"
+//     ) {
+//       result[i] = "";
+//       result.push(result[i]);
+//     }
+//   }
+//   result = result.join("");
+//   return result;
+// };
+// console.log(removeVowels(vowels));
+
+// 5. Alphabet value
+// Hitung jumlah value suatu string dimana setiap huruf memiliki value
+// posisi huruf tersebut di dalam abjad. Contoh: A = 1, B = 2, Z = 26, J = 10
+// Examples
+// Input: "abc"
+// Output: 6
+
+// Input: "steve"
+// Output: 71
+const alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
+
+let numbers = 0;
+const countAlphabet = (val) => {
+  for (let i = 0; i < alphabetArr.length; i++) {
+    numbers += alphabetArr.indexOf(val[i]) + 1;
   }
-  result = result.join("");
-  return result;
+  return numbers;
 };
-console.log(removeVowels(vowels));
+
+console.log(countAlphabet("steve"));
+//. remove duplicate
+// there are 2 array of numbers, those 2 arrays has some identical value
+// show new array with both arrays combined but no identical value
+
+// const number1 = [1, 2, 3, 4, 5];
+// const number2 = [3, 4, 5, 6, 7];
+
+// const newNumber = new Set(number1.concat(number2));
+
+// console.log(newNumber);
