@@ -44,24 +44,46 @@
 // input : [1, 2, 3, 4, 5, 9]
 // output : 8
 
-const numbers = [1, 2, 3, 4, 5, 9];
+// const numbers = [1, 2, 3, 4, 5, 9];
 
-const plusMinus = (numbers = []) => {
-  let result = 0;
-  let operator = "plus";
-  for (let i = 0; i < numbers.length; i++) {
-    if (operator == "plus") {
-      result += numbers[i];
-      operator = "minus";
-    } else if (operator == "minus") {
-      result -= numbers[i];
-      operator = "plus";
-    }
-  }
-  return result;
-};
-console.log(plusMinus(numbers));
+// const plusMinus = (numbers = []) => {
+//   let result = 0;
+//   let operator = "plus";
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (operator == "plus") {
+//       result += numbers[i];
+//       operator = "minus";
+//     } else if (operator == "minus") {
+//       result -= numbers[i];
+//       operator = "plus";
+//     }
+//   }
+//   return result;
+// };
+// console.log(plusMinus(numbers));
 
 //4. remove vowels
 // input : "hello"
 // output : remove vowels
+//use method split
+
+const vowels = "hello world";
+const removeVowels = (val) => {
+  result = vowels.split("");
+
+  for (let i = 0; i < result.length; i++) {
+    if (
+      result[i] == "a" ||
+      result[i] == "i" ||
+      result[i] == "u" ||
+      result[i] == "e" ||
+      result[i] == "o"
+    ) {
+      result[i] = "";
+      result.push(result[i]);
+    }
+  }
+  result = result.join("");
+  return result;
+};
+console.log(removeVowels(vowels));
