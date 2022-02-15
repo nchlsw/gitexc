@@ -97,17 +97,43 @@
 
 // Input: "steve"
 // Output: 71
+// const alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
+
+// let numbers = 0;
+// const countAlphabet = (val) => {
+//   for (let i = 0; i < alphabetArr.length; i++) {
+//     numbers += alphabetArr.indexOf(val[i]) + 1;
+//   }
+//   return numbers;
+// };
+
+// console.log(countAlphabet("steve"));
+
+// 6. Odd alphabet value
+// Sama seperti soal nomor 2, tetapi kali ini hanya hitung huruf yang memiliki
+// value ganjil
+
+// Input: "steve"
+// Output: 29
+
+// Input: "abc"
+// Output: 4
+
 const alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
 
 let numbers = 0;
 const countAlphabet = (val) => {
   for (let i = 0; i < alphabetArr.length; i++) {
-    numbers += alphabetArr.indexOf(val[i]) + 1;
+    if (alphabetArr.indexOf(val[i]) % 2 == 0) {
+      val[i] = false;
+      numbers += alphabetArr.indexOf(val[i]) + 1;
+    }
   }
   return numbers;
 };
 
-console.log(countAlphabet("steve"));
+console.log(countAlphabet("abc"));
+
 //. remove duplicate
 // there are 2 array of numbers, those 2 arrays has some identical value
 // show new array with both arrays combined but no identical value
