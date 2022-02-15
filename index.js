@@ -119,28 +119,53 @@
 // Input: "abc"
 // Output: 4
 
-const alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
+// const alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
 
-let numbers = 0;
-const countAlphabet = (val) => {
-  for (let i = 0; i < alphabetArr.length; i++) {
-    if (alphabetArr.indexOf(val[i]) % 2 == 0) {
-      val[i] = false;
-      numbers += alphabetArr.indexOf(val[i]) + 1;
-    }
-  }
-  return numbers;
-};
+// let numbers = 0;
+// const countAlphabet = (val) => {
+//   for (let i = 0; i < alphabetArr.length; i++) {
+//     if (alphabetArr.indexOf(val[i]) % 2 == 0) {
+//       val[i] = false;
+//       numbers += alphabetArr.indexOf(val[i]) + 1;
+//     }
+//   }
+//   return numbers;
+// };
 
-console.log(countAlphabet("abc"));
+// console.log(countAlphabet("abc"));
 
-//. remove duplicate
-// there are 2 array of numbers, those 2 arrays has some identical value
-// show new array with both arrays combined but no identical value
+// 4. Unique items
+// Diketahui ada 2 array of numbers, dimana 2 array tersebut memiliki beberapa
+// value/number yang sama. Tampilkan sebuah array baru yang berisi list value
+// unique (hanya berada di salah satu array saja)
 
-// const number1 = [1, 2, 3, 4, 5];
-// const number2 = [3, 4, 5, 6, 7];
+// Input:
+// arr1 = [1, 3, 7, 4];
+// arr2 = [1, 5, 3, 7, 0];
+// Output: [5, 4, 0]
 
-// const newNumber = new Set(number1.concat(number2));
+// const arr1 = [1, 3, 7, 4];
+// const arr2 = [1, 5, 3, 7, 0];
 
-// console.log(newNumber);
+// const newArray = new Set([...arr1], [...arr2]);
+// console.log(newArray);
+
+// Bonus Question
+// 5. Remove duplicates
+// Diketahui ada 2 array of numbers, dimana 2 array tersebut memiliki beberapa
+// value/number yang sama. Tampilkan sebuah array baru yang berisi list value
+// dari kedua array tersebut, tetapi sudah
+// Input:
+// arr1 = [1, 3, 7, 4]
+// arr2 = [1, 5, 3, 7, 0]
+// Output: [1, 3, 4, 5, 7, 0]
+arr1 = [1, 3, 7, 4];
+arr2 = [1, 5, 3, 7, 0];
+
+const newNumber = new Set(arr1.concat(arr2));
+
+// console.log(newNumber2);
+const newNumber2 = [...arr1, ...arr2];
+
+let newArray = newNumber2.filter((val, idx) => newNumber2.indexOf(val) == idx);
+console.log(newArray);
