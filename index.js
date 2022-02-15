@@ -144,12 +144,24 @@
 // arr2 = [1, 5, 3, 7, 0];
 // Output: [5, 4, 0]
 
-// const arr1 = [1, 3, 7, 4];
-// const arr2 = [1, 5, 3, 7, 0];
+const arr1 = [1, 3, 7, 4];
+const arr2 = [1, 5, 3, 7, 0];
 
-// const newArray = new Set([...arr1], [...arr2]);
-// console.log(newArray);
-
+const uniqueValue = (arr1, arr2) => {
+  let newArr = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.indexOf(arr1[i]) === -1) {
+      newArr.push(arr1[i]);
+    }
+  }
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) === -1) {
+      newArr.push(arr2[i]);
+    }
+  }
+  return newArr;
+};
+console.log(uniqueValue(arr1, arr2));
 // Bonus Question
 // 5. Remove duplicates
 // Diketahui ada 2 array of numbers, dimana 2 array tersebut memiliki beberapa
@@ -159,13 +171,14 @@
 // arr1 = [1, 3, 7, 4]
 // arr2 = [1, 5, 3, 7, 0]
 // Output: [1, 3, 4, 5, 7, 0]
-arr1 = [1, 3, 7, 4];
-arr2 = [1, 5, 3, 7, 0];
 
-const newNumber = new Set(arr1.concat(arr2));
+// arr1 = [1, 3, 7, 4];
+// arr2 = [1, 5, 3, 7, 0];
 
-// console.log(newNumber2);
-const newNumber2 = [...arr1, ...arr2];
+// const newNumber = new Set(arr1.concat(arr2));
 
-let newArray = newNumber2.filter((val, idx) => newNumber2.indexOf(val) == idx);
-console.log(newArray);
+// // console.log(newNumber2);
+// const newNumber2 = [...arr1, ...arr2];
+
+// let newArray = newNumber2.filter((val, idx) => newNumber2.indexOf(val) == idx);
+// console.log(newArray);
