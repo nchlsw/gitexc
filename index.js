@@ -67,7 +67,7 @@
 // output : remove vowels
 //use method split
 
-// const vowels = "hello world";
+// const vowels = "hellow world";
 // const removeVowels = (val) => {
 //   result = vowels.split("");
 
@@ -144,24 +144,26 @@
 // arr2 = [1, 5, 3, 7, 0];
 // Output: [5, 4, 0]
 
-const arr1 = [1, 3, 7, 4];
-const arr2 = [1, 5, 3, 7, 0];
+// const arr1 = [1, 3, 7, 4];
+// const arr2 = [1, 5, 3, 7, 0];
 
-const uniqueValue = (arr1, arr2) => {
-  let newArr = [];
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr2.indexOf(arr1[i]) === -1) {
-      newArr.push(arr1[i]);
-    }
-  }
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) === -1) {
-      newArr.push(arr2[i]);
-    }
-  }
-  return newArr;
-};
-console.log(uniqueValue(arr1, arr2));
+// const uniqueValue = (arr1 = [], arr2 = []) => {
+//   const resultArr = [];
+//   arr1.forEach((val) => {
+//     if (!arr2.includes(val)) {
+//       resultArr.push(val);
+//     }
+//   });
+//   arr2.forEach((val) => {
+//     if (!arr1.includes(val)) {
+//       resultArr.push(val);
+//     }
+//   });
+//   return resultArr;
+// };
+
+// };
+// console.log(uniqueValue(arr1, arr2));
 // Bonus Question
 // 5. Remove duplicates
 // Diketahui ada 2 array of numbers, dimana 2 array tersebut memiliki beberapa
@@ -172,8 +174,8 @@ console.log(uniqueValue(arr1, arr2));
 // arr2 = [1, 5, 3, 7, 0]
 // Output: [1, 3, 4, 5, 7, 0]
 
-// arr1 = [1, 3, 7, 4];
-// arr2 = [1, 5, 3, 7, 0];
+arr1 = [1, 3, 7, 4];
+arr2 = [1, 5, 3, 7, 0];
 
 // const newNumber = new Set(arr1.concat(arr2));
 
@@ -182,3 +184,15 @@ console.log(uniqueValue(arr1, arr2));
 
 // let newArray = newNumber2.filter((val, idx) => newNumber2.indexOf(val) == idx);
 // console.log(newArray);
+
+const removeDuplicates = (arr1 = [], arr2 = []) => {
+  const resultArr = [...arr1];
+  arr2.forEach((val) => {
+    if (!resultArr.includes(val)) {
+      resultArr.push(val);
+    }
+  });
+  return resultArr;
+};
+
+console.log(removeDuplicates(arr1, arr2));
